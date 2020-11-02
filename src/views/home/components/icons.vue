@@ -21,59 +21,7 @@ export default {
             swiperOptions: {
                 pagination: '.swiper-pagination',
                 // Some Swiper option/callback...
-            },
-            iconList: [
-                {
-                    id: '001',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/flight.png',
-                    desc: '机票'
-                },
-                {
-                    id: '002',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                    desc: '酒店'
-                },
-                {
-                    id: '003',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/train.png',
-                    desc: '火车票'
-                },
-                {
-                    id: '004',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/package.png',
-                    desc: '度假'
-                },
-                {
-                    id: '005',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '景点门票'
-                },
-                {
-                    id: '006',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/flight.png',
-                    desc: '机票'
-                },
-                {
-                    id: '007',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/hotel.png',
-                    desc: '酒店'
-                },
-                {
-                    id: '008',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/train.png',
-                    desc: '火车票'
-                },
-                {
-                    id: '009',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/package.png',
-                    desc: '度假'
-                },
-                {
-                    id: '010',
-                    url: 'https://s.qunarzz.com/homenode/images/touchheader/piao.png',
-                    desc: '景点门票'
-                }
-            ]
+            }
         }
     },
     props: {
