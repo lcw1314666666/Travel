@@ -2,13 +2,13 @@
     <div class="recommend">
         <div class="title">今日推荐</div>
         <ul>
-            <li class="item" v-for="item in recommendList" :key="item.id">
+            <li class="item" v-for="item in list" :key="item.comment_num">
                 <div class="item-img-wrapper">
-                    <img class="item-img" :src="item.img" alt="">
+                    <img class="item-img" :src="item.imgUrl" alt="">
                 </div>
                 <div class="item-info">
-                    <p class="item-title">{{ item.title }}</p>
-                    <p class="item-desc">{{ item.desc }}</p>
+                    <p class="item-title">{{ item.address }}</p>
+                    <p class="item-desc">{{ item.title }}</p>
                     <button class="item-button border-bottom">查看详情</button>
                 </div>
             </li>
@@ -65,6 +65,9 @@ export default {
                 }
             ]
         }
+    },
+    props: {
+        list: Array
     }
  }
 </script>

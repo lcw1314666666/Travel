@@ -2,9 +2,9 @@
     <div class="weekend">
         <div class="title">周末去哪儿</div>
         <ul>
-            <li class="item" v-for="item in weekendList" :key="item.id">
+            <li class="item" v-for="item in list" :key="item.id">
                 <div class="item-img-wrapper">
-                    <img class="item-img" :src="item.img" alt="">
+                    <img class="item-img" :src="item.imgUrl" alt="">
                 </div>
                 <div class="item-info">
                     <p class="item-title">{{ item.title }}</p>
@@ -20,33 +20,10 @@ export default {
     name: 'HomeWeekend',
     data () {
         return {
-            weekendList: [
-                {
-                    id: '001',
-                    img: 'https://imgs.qunarzz.com/sight/p0/1904/f3/f30e60e7a00c0923a3.img.jpg_250x250_7464052b.jpg',
-                    title: '宛园',
-                    desc: '宛园，位于临清市西北隅，占地110亩，建筑面积一万九千平方米，水面面积一万五千平方米，是一处由苏州园林设计院设计、承建，集园林、展览、游览休闲为一体的社会文化设施。',
-                },
-                {
-                    id: '002',
-                    img: 'https://imgs.qunarzz.com/vs_ceph_vcimg/b8c4527c41649814cc4cf86880abba54.jpeg',
-                    title: '宛园',
-                    desc: '宛园，位于临清市西北隅，占地110亩，建筑面积一万九千平方米，水面面积一万五千平方米，是一处由苏州园林设计院设计、承建，集园林、展览、游览休闲为一体的社会文化设施。',
-                },
-                {
-                    id: '003',
-                    img: 'https://imgs.qunarzz.com/vs_ceph_vcimg/b8c4527c41649814cc4cf86880abba54.jpeg',
-                    title: '宛园',
-                    desc: '宛园，位于临清市西北隅，占地110亩，建筑面积一万九千平方米，水面面积一万五千平方米，是一处由苏州园林设计院设计、承建，集园林、展览、游览休闲为一体的社会文化设施。',
-                },
-                {
-                    id: '004',
-                    img: 'https://imgs.qunarzz.com/vs_ceph_vcimg/b8c4527c41649814cc4cf86880abba54.jpeg',
-                    title: '宛园',
-                    desc: '宛园，位于临清市西北隅，占地110亩，建筑面积一万九千平方米，水面面积一万五千平方米，是一处由苏州园林设计院设计、承建，集园林、展览、游览休闲为一体的社会文化设施。',
-                }
-            ]
         }
+    },
+    props: {
+        list: Array
     }
  }
 </script>
