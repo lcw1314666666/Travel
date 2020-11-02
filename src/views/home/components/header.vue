@@ -7,10 +7,12 @@
             <span class="iconfont">&#xe601;</span>
             搜索
         </div>
-        <div class="header-right">
-            城市
-            <span class="iconfont">&#xe600;</span>
-        </div>
+        <router-link to="/city" tag="div">
+            <div class="header-right">
+                城市
+                <span class="iconfont">&#xe600;</span>
+            </div>
+        </router-link>
     </div>
 </template>
 

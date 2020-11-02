@@ -39,12 +39,10 @@ export default {
         },
         getHomeInfoSuccess (res) {
             res = res.data
-            console.log(res)
             if (res.ret && res.data) {//服务区返回数据，并且有数据
                 const data = res.data
                 this.swiper = data.swiperList
                 this.icons = data.iconList
-                console.log(this.icons)
                 this.recommend = data.itemList
                 this.weekend = data.weekendList
             }
