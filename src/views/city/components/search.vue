@@ -14,7 +14,6 @@ export default {
 <style scoped>
     .search{
         position: relative;
-        width: 100%;
         height: .72rem;
         padding: 0 .1rem;
         background: #00bcd4
@@ -28,7 +27,7 @@ export default {
         color: #666;
         text-align: center;
         border-radius: 0.06rem;
-        width: 94%;
+        width: 97%;
         outline: none;
     }
 </style>
