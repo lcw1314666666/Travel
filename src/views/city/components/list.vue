@@ -13,44 +13,17 @@
             <div class="area">
                 <div class="title border-topbuttom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="button-wrapper">
-                        <div class="button">北京</div>
+                    <div class="button-wrapper" v-for="item in hotCities" :key="item.id">
+                        <div class="button">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
 
-            <div class="area">
-                <div class="title border-topbuttom">A</div>
-                <div class="item-list">
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
-                    <div class="item">尼泊尔</div>
+            <div class="area" v-for="(item, key) in cities" :key="key">
+                <div class="title border-topbuttom">{{ key }}</div>
+                <div class="item-list" v-for="value in item" :key="value.id">
+                    <div class="item">{{ value.name }}</div>
+                    
                 </div>
             </div>
         </div>
@@ -62,6 +35,10 @@
 import BScroll from 'better-scroll'
 export default {
     name: 'CityList',
+    props: {
+        cities: Object,
+        hotCities: Array
+    },
     mounted () {
         this.scroll = new BScroll(this.$refs.wrapper)
     }
@@ -74,13 +51,13 @@ export default {
         border-bottom: 0.02rem solid #ccc;
     }
     .list{
-        overflow: hidden;
         position: absolute;
         left: 0;
         right: 0;
         top: 1.6rem;
         bottom: 0;
         z-index: -1;
+        overflow: hidden;
     }
     .title{
         line-height: .44rem;
