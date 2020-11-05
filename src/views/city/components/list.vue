@@ -1,6 +1,6 @@
 <template>
-    <div ref="wrapper">
-        <div class="list">
+    <div ref="wrapper" class="list">
+        <div>
             <div class="area">
                 <div class="title border-topbuttom">当前城市</div>
                 <div class="button-list">
@@ -39,9 +39,10 @@ export default {
         cities: Object,
         hotCities: Array
     },
-    mounted () {
+    mounted: function () {
+        console.log(this.$refs.wrapper)
         this.scroll = new BScroll(this.$refs.wrapper)
-    }
+    },
 }
 </script>
 
@@ -51,13 +52,12 @@ export default {
         border-bottom: 0.02rem solid #ccc;
     }
     .list{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 1.6rem;
-        bottom: 0;
-        z-index: -1;
         overflow: hidden;
+        position: absolute;
+        top: 1.6rem;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
     .title{
         line-height: .44rem;

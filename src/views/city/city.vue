@@ -1,9 +1,9 @@
 <template>
     <div class="city">
-        <CityHeader></CityHeader>
-        <CitySearch></CitySearch>
-        <CityList :hotCities="hotCities" :cities="cities"></CityList>
-        <CityAlphabet :cities="cities" ></CityAlphabet>
+        <CityHeader class="header"></CityHeader>
+        <CitySearch class="search"></CitySearch>
+        <CityList class="list" :hotCities="hotCities" :cities="cities"></CityList>
+        <CityAlphabet class="alphabet" :cities="cities" ></CityAlphabet>
     </div>
 </template>
 
@@ -51,5 +51,4 @@ export default {
 
 
 <style scoped>
-
 </style>

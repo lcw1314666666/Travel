@@ -17,6 +17,7 @@ export default {
 
 <style scoped>
     .header{
+        position: relative;
         height: .86rem;
         line-height: .86rem;
         width: 100%;
@@ -26,11 +27,13 @@ export default {
         font-size: 0.32rem;
     }
     .header .header-left{
-        position: absolute;
-        width: .64rem;
-        left: 0;
+        color: #ffffff;
         top: 0;
-        bottom: 0;
-        font-size: 0.3rem;
+        left: 0;
+        font-size: .4rem;
+        width: .64rem;
+        position: absolute;
+        text-align: center;
+
     }
 </style>
