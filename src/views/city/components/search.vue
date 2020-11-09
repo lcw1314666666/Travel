@@ -10,6 +10,7 @@
                 <li class="search-item boredr-bottom" 
                     v-for="item in list" 
                     :key="item.id"
+                    @click="handleChangeCity(item.name)"
                 >{{ item.name }}</li>
                 <li class="search-item boredr-bottom" 
                     v-show="!list.length"    
@@ -23,6 +24,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
     name: 'CitySearch',
     data () {
@@ -34,6 +36,14 @@ export default {
     },
     props: {
         cities: Object
+    },
+    methods: {
+        handleChangeCity (e) {
+            // this.$store.commit('changeCity', e)
+            this.changeCity(e)
+            this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
     },
     watch: {
         keyword () {
@@ -55,7 +65,6 @@ export default {
                     })
                 }
                 this.list = list
-                console.log(list)
             }, 100)
         }
     },

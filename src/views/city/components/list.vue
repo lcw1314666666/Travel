@@ -5,7 +5,7 @@
                 <div class="title border-topbuttom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button">{{ currentCity }}</div>
                     </div>
                 </div>
             </div>
@@ -13,8 +13,11 @@
             <div class="area">
                 <div class="title border-topbuttom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper" v-for="item in hotCities" :key="item.id">
-                        <div class="button">{{ item.name }}</div>
+                    <div class="button-wrapper" 
+                         v-for="item in hotCities" 
+                         :key="item.id"
+                    >
+                        <div class="button"  @click="handleChangeCity(item.name)">{{ item.name }}</div>
                     </div>
                 </div>
             </div>
@@ -22,7 +25,7 @@
             <div class="area" v-for="(item, key) in cities" :key="key">
                 <div class="title border-topbuttom" :ref="key">{{ key }}</div>
                 <div class="item-list" v-for="value in item" :key="value.id">
-                    <div class="item">{{ value.name }}</div>
+                    <div class="item" @click="handleChangeCity(value.name)">{{ value.name }}</div>
                     
                 </div>
             </div>
@@ -33,6 +36,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import { mapState, mapMutations } from 'vuex'
 export default {
     name: 'CityList',
     data () {
@@ -45,8 +49,25 @@ export default {
         hotCities: Array,
         letter: String 
     },
+    methods: {
+        handleChangeCity (e) {
+            // this.$store.commit('changeCity', e)
+            this.changeCity(e)
+            this.$router.push('/')
+        },
+        ...mapMutations(['changeCity'])
+    },
+    computed: {
+        // currentCity () {
+        //     return this.$store.state.city
+        // }
+        ...mapState({
+            currentCity: 'city'
+        })
+    },
     mounted: function () {
         this.scroll = new BScroll(this.$refs.wrapper)
+        // console.log(this.$store.state.city)
     },
     watch: {
         letter () {
