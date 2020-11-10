@@ -2,7 +2,13 @@
     <div class="recommend">
         <div class="title">今日推荐</div>
         <ul>
-            <li class="item" v-for="item in list" :key="item.comment_num">
+            <router-link
+                tag="li"
+                class="item" 
+                v-for="item in list" 
+                :key="item.comment_num"
+                :to="'/detail/:'+ item.comment_num" 
+            >
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="">
                 </div>
@@ -11,7 +17,7 @@
                     <p class="item-desc">{{ item.title }}</p>
                     <button class="item-button border-bottom">查看详情</button>
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -42,7 +48,11 @@ export default {
         overflow: hidden;
         display: flex;
         height: 1.9rem;
-        font-size: 0.23rem
+        font-size: 0.23rem;
+        background: none;
+        outline: none;
+        text-decoration: none;
+        color: #333;
     }
     /* .item .item-img-wrapper{
         width: 1.7rem;

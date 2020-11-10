@@ -60,5 +60,9 @@ export default {
         float: right;
         text-align: center;
         line-height: 0.8rem;
+        background: none;
+        outline: none;
+        text-decoration: none;
+        color: #333;
     }
 </style>
