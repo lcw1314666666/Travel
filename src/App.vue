@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
-    <keep-alive include="detail">
+    <keep-alive include="Detail">
       <router-view></router-view>
-    </keep-alive>
+    </keep-alive>   
   </div>
 </template>
 

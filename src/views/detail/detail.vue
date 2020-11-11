@@ -1,6 +1,5 @@
 <template>
     <div class="detail">
-        
         <DetailBanner></DetailBanner>
         <keep-alive>
             <DetailHeader></DetailHeader>

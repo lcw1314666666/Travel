@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { onDeactivated } from 'vue'
 export default {
     name: 'Header',
     data () {
@@ -50,6 +51,11 @@ export default {
     },
     activated () {
         window.addEventListener('scroll', this.handleScroll)
+        console.log('activated')
+    },
+    deactivated () {
+        window.removeEventListener('scroll', this.handleScroll)
+        console.log('deactivated')
     }
 }
 </script>
