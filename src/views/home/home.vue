@@ -43,7 +43,6 @@ export default {
             res = res.data
             if (res.ret && res.data) {//服务区返回数据，并且有数据
                 const data = res.data
-                // console.log(data)
                 this.swiper = data.swiperList
                 this.icons = data.iconList
                 this.recommend = data.itemList

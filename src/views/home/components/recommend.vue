@@ -7,7 +7,7 @@
                 class="item" 
                 v-for="item in list" 
                 :key="item.comment_num"
-                :to="'/detail/:'+ item.comment_num" 
+                :to="'/detail/'+ item.comment_num" 
             >
                 <div class="item-img-wrapper">
                     <img class="item-img" :src="item.imgUrl" alt="">

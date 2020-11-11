@@ -77,6 +77,7 @@ export default {
        color: #fff;
    }
    .header-fixed{
+        z-index: 2;
         position: fixed;
         top: 0;
         right: 0;

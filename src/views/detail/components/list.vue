@@ -2,7 +2,7 @@
     <div class="list">
         <div 
             class="item"
-            v-for="(item, index) in list"
+            v-for="(item, index) in categoryList"
             :key="index"
         >
             <div class="item-title border-bottom">
@@ -10,7 +10,7 @@
                 {{ item.title }}
             </div>
             <div class="childredList" :v-if="item.children">
-                <DetailList :list="item.children"></DetailList>
+                <DetailList :categoryList="item.children"></DetailList>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
 export default {
     name: "DetailList",
     props: {
-        list: Array
+        categoryList: Array
     }
 }
 </script>

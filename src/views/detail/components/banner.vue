@@ -2,18 +2,18 @@
     <div class="banner" @click="handleBannerClick">
         <img
             class="banner-img" 
-            src="https://imgs.qunarzz.com/vs_ceph_b2c_001/f8ad341d-4255-4730-bd93-e636be294f5d.jpg_r_390x260x95_ed2784a9.jpg" 
+            :src="bannerImg" 
             alt=""
         >
         <div class="banner-info">
-            <div class="banner-title">banner</div>
+            <div class="banner-title">{{ sightName }}</div>
             <div class="banner-number">
                 <span class="iconfont banner-icon">&#xeaf2;</span>
                 <span class="num">0</span>
             </div>
         </div>
         <Galler 
-            :imgs="imgs" 
+            :imgs="gallaryImgs" 
             v-show="showGallery"
             @close="handleGalleryClose" 
         ></Galler>
@@ -30,6 +30,11 @@ export default {
             imgs: ['https://imgs.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_710x360_64983e73.jpg',
                     'https://imgs.qunarzz.com/sight/p0/2005/39/3979f1867defec4ea3.water.jpg_710x360_c22d14f0.jpg']
         }
+    },
+    props: {
+        bannerImg: String,
+        sightName: String,
+        gallaryImgs: Array,
     },
     components: {
         Galler
