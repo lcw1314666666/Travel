@@ -12,16 +12,19 @@
                 <span class="num">0</span>
             </div>
         </div>
-        <Galler 
-            :imgs="gallaryImgs" 
-            v-show="showGallery"
-            @click.stop="handleGalleryClose" 
-        ></Galler>
+        <FadeAnimation>
+            <Galler 
+                :imgs="gallaryImgs" 
+                v-show="showGallery"
+                @click.stop="handleGalleryClose" 
+            ></Galler>
+        </FadeAnimation>
     </div>
 </template>
 
 <script>
 import Galler from '@/components/gallery/gallery.vue'
+import FadeAnimation from '@/components/FadeAnimation/fadeAnimation.vue'
 export default {
     name: 'DetailBanner',
     data () {
@@ -35,7 +38,8 @@ export default {
         gallaryImgs: Array,
     },
     components: {
-        Galler
+        Galler,
+        FadeAnimation
     },
     methods: {
         handleBannerClick () {
