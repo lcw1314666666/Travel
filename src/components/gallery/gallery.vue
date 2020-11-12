@@ -1,12 +1,13 @@
 <template>
-    <div class="gallery" @click="handleGalleryClick">
-        <swiper :options="swiperOptions">
-            <swiper-slide v-for="(item, index) in imgs" :key='index'>
-                <img class="swiper-img" :src="item">
-            </swiper-slide>
-            
-            <div class="swiper-pagination pagination"></div>
-        </swiper>
+    <div class="gallery">
+        <div  class="wrapper">
+            <swiper :options="swiperOptions">
+                <swiper-slide v-for="(item, index) in imgs" :key='index'>
+                    <img class="swiper-img" :src="item">
+                </swiper-slide>
+                <div class="swiper-pagination pagination"></div>
+            </swiper>
+        </div>
     </div>
 </template>
 
@@ -16,11 +17,13 @@ export default {
     data () {
         return {
             swiperOptions: {
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'fraction',
-                    observerParent: true,
-                    observer: true
+                swiperOption: {
+                    loop: true,
+                    pagination: '.swiper-pagination',
+                    paginationType: 'fraction',
+                    observer:true,
+                    observeParents:true,
+                    // observeSlideChildren:true,
                 }
                 // Some Swiper option/callback...
             }
@@ -34,9 +37,6 @@ export default {
         }
     },
     methods: {
-        handleGalleryClick () {
-            this.$emit('close')
-        }
     }
 }
 </script>
@@ -59,9 +59,9 @@ export default {
         overflow: hidden;
         width: 100%;
         height: 0;
-        padding-bottom: 100%；
+        padding-bottom: 100%;
     }
-    .gallery .wrapper .swiper-img{
+    .gallery .wrapper img{
         width: 100%;
     }
 </style>

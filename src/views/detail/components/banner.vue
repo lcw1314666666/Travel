@@ -1,5 +1,5 @@
 <template>
-    <div class="banner" @click="handleBannerClick">
+    <div class="banner" @click.stop="handleBannerClick">
         <img
             class="banner-img" 
             :src="bannerImg" 
@@ -15,7 +15,7 @@
         <Galler 
             :imgs="gallaryImgs" 
             v-show="showGallery"
-            @close="handleGalleryClose" 
+            @click.stop="handleGalleryClose" 
         ></Galler>
     </div>
 </template>
@@ -27,8 +27,6 @@ export default {
     data () {
         return {
             showGallery: false,
-            imgs: ['https://imgs.qunarzz.com/sight/p0/201405/12/51b63883c25f5d87af3c08bb016e2bd7.jpg_710x360_64983e73.jpg',
-                    'https://imgs.qunarzz.com/sight/p0/2005/39/3979f1867defec4ea3.water.jpg_710x360_c22d14f0.jpg']
         }
     },
     props: {
